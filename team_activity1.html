@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Project #1</title>
+    <script>
+        function addNumbers() {
+            //alert("Test");
+            let number = document.getElementById("number").value;
+            number = parseInt(number);
+           
+            let sum = addUpNumber(number);
+            document.getElementById("coreTwo").innerHTML = sum;
+        }
+
+        function addUpNumber(number) {
+            let result = 0;
+            for (let i = 1; i <= number; i++) {
+                result += i;
+            }
+            return result;
+        }
+
+        function coreThree() {
+            let number1 = parseInt(document.getElementById("number").value);
+            let number2 = parseInt(document.getElementById("number2").value);
+
+            let result = number1 + number2;
+            document.getElementById("coreThree").innerHTML = result;
+        }
+
+
+        function multiply(){
+            let number1 = parseInt(document.getElementById("number").value);
+            let number2 = parseInt(document.getElementById("number2").value);
+            document.getElementById("stretchThree").innerHTML = multiplyNumber(number1,number2);
+        }
+        
+        let multiplyNumber = (number1, number2) => number1 * number2;
+
+    </script>
+    <style></style>
+</head>
+<body>
+    <h1>Team Activity</h1>
+    <input type="number" id="number">
+    <br>
+    <input type="number" id="number2">
+    <button type="button" id="btn" onclick="addNumbers()">Add</button>
+    <button type="button" id="btn2" onclick="coreThree()">+</button>
+    <button type="button" id="btn3" onclick="multiply()">*</button>
+    <div id="coreTwo"></div>
+    <div id="coreThree"></div>
+    <div id="stretchThree"></div>
+
+    
+</body>
+</html>
