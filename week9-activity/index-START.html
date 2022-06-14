@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS Drum Kit</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="keys">
+      <div data-key="65" class="key">
+        <kbd>A</kbd>
+        <span class="sound">clap</span>
+      </div>
+      <div data-key="83" class="key">
+        <kbd>S</kbd>
+        <span class="sound">hihat</span>
+      </div>
+      <div data-key="68" class="key">
+        <kbd>D</kbd>
+        <span class="sound">kick</span>
+      </div>
+      <div data-key="70" class="key">
+        <kbd>F</kbd>
+        <span class="sound">openhat</span>
+      </div>
+      <div data-key="71" class="key">
+        <kbd>G</kbd>
+        <span class="sound">boom</span>
+      </div>
+      <div data-key="72" class="key">
+        <kbd>H</kbd>
+        <span class="sound">ride</span>
+      </div>
+      <div data-key="74" class="key">
+        <kbd>J</kbd>
+        <span class="sound">snare</span>
+      </div>
+      <div data-key="75" class="key">
+        <kbd>K</kbd>
+        <span class="sound">tom</span>
+      </div>
+      <div data-key="76" class="key">
+        <kbd>L</kbd>
+        <span class="sound">tink</span>
+      </div>
+    </div>
+
+    <audio data-key="65" src="sounds/clap.wav"></audio>
+    <audio data-key="83" src="sounds/hihat.wav"></audio>
+    <audio data-key="68" src="sounds/kick.wav"></audio>
+    <audio data-key="70" src="sounds/openhat.wav"></audio>
+    <audio data-key="71" src="sounds/boom.wav"></audio>
+    <audio data-key="72" src="sounds/ride.wav"></audio>
+    <audio data-key="74" src="sounds/snare.wav"></audio>
+    <audio data-key="75" src="sounds/tom.wav"></audio>
+    <audio data-key="76" src="sounds/tink.wav"></audio>
+
+    <script>
+      let times = {
+        65: 0,
+        83: 0,
+        68: 0,
+        70: 0,
+        71: 0,
+        72: 0,
+        74: 0,
+        75: 0,
+        76: 0,
+      };
+      document.addEventListener('keydown', async function (e) {
+        let keycode = e.keyCode;
+        let sound;
+        let div;
+        const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+        switch (keycode) {
+          case 65:
+            div = document.querySelector(`div[data-key="${e.keyCode}`);
+            sound = document.querySelector(`audio[data-key="${e.keyCode}`);
+            if (sound.paused) {
+              sound.play();
+              div.classList.add('playing');
+
+              await delay(100);
+              div.classList.remove('playing');
+              times[e.keyCode] += 10;
+              console.log(times);
+              if (times[e.keyCode] == 100) {
+                times[e.keyCode] = 0;
+              }
+              document.querySelector(
+                `div[data-key="${e.keyCode}`
+              ).style.margin = `${times[e.keyCode]}px 0 0 0 `;
+            } else {
+              sound.pause();
+              sound.currentTime = 0;
+              sound.play();
+              div.classList.add('playing');
+              await delay(100);
+              div.classList.remove('playing');
+              times[e.keyCode] += 10;
+              console.log(times);
+              if (times[e.keyCode] == 100) {
+                times[e.keyCode] = 0;
+              }
+              document.querySelector(
+                `div[data-key="${e.keyCode}`
+              ).style.margin = `${times[e.keyCode]}px 0 0 0 `;
+              break;
+            }
+            break;
+          case 83:
+            div = document.querySelector(`div[data-key="${e.keyCode}`);
+            sound = document.querySelector(`audio[data-key="${e.keyCode}`);
+            if (sound.paused) {
+              sound.play();
+              div.classList.add('playing');
+
+              await delay(100);
+              div.classList.remove('playing');
+              times[e.keyCode] += 10;
+              console.log(times);
+              if (times[e.keyCode] == 100) {
+                times[e.keyCode] = 0;
+              }
+              document.querySelector(
+                `div[data-key="${e.keyCode}`
+              ).style.margin = `${times[e.keyCode]}px 0 0 0 `;
+            } else {
+              sound.pause();
+              sound.currentTime = 0;
+              sound.play();
+              div.classList.add('playing');
+              await delay(100);
+              div.classList.remove('playing');
+              times[e.keyCode] += 10;
+              console.log(times);
+              if (times[e.keyCode] == 100) {
+                times[e.keyCode] = 0;
+              }
+              document.querySelector(
+                `div[data-key="${e.keyCode}`
+              ).style.margin = `${times[e.keyCode]}px 0 0 0 `;
+              break;
+            }
+          case 68:
+            div = document.querySelector(`div[data-key="${e.keyCode}`);
+            sound = document.querySelector(`audio[data-key="${e.keyCode}`);
+            if (sound.paused) {
+              sound.play();
+              div.classList.add('playing');
+
+              await delay(100);
+              div.classList.remove('playing');
+              times[e.keyCode] += 10;
+              console.log(times);
+              if (times[e.keyCode] == 100) {
+                times[e.keyCode] = 0;
+              }
+              document.querySelector(
+                `div[data-key="${e.keyCode}`
+              ).style.margin = `${times[e.keyCode]}px 0 0 0 `;
+            } else {
+              sound.pause();
+              sound.currentTime = 0;
+              sound.play();
+              div.classList.add('playing');
+              await delay(100);
+              div.classList.remove('playing');
+              times[e.keyCode] += 10;
+              console.log(times);
+              if (times[e.keyCode] == 100) {
+                times[e.keyCode] = 0;
+              }
+              document.querySelector(
+                `div[data-key="${e.keyCode}`
+              ).style.margin = `${times[e.keyCode]}px 0 0 0 `;
+              break;
+            }
+          case 70:
+            div = document.querySelector(`div[data-key="${e.keyCode}`);
+            sound = document.querySelector(`audio[data-key="${e.keyCode}`);
+            if (sound.paused) {
+              sound.play();
+              div.classList.add('playing');
+
+              await delay(100);
+              div.classList.remove('playing');
+              times[e.keyCode] += 10;
+              console.log(times);
+              if (times[e.keyCode] == 100) {
+                times[e.keyCode] = 0;
+              }
+              document.querySelector(
+                `div[data-key="${e.keyCode}`
+              ).style.margin = `${times[e.keyCode]}px 0 0 0 `;
+            } else {
+              sound.pause();
+              sound.currentTime = 0;
+              sound.play();
+              div.classList.add('playing');
+              await delay(100);
+              div.classList.remove('playing');
+              times[e.keyCode] += 10;
+              console.log(times);
+              if (times[e.keyCode] == 100) {
+                times[e.keyCode] = 0;
+              }
+              document.querySelector(
+                `div[data-key="${e.keyCode}`
+              ).style.margin = `${times[e.keyCode]}px 0 0 0 `;
+              break;
+            }
+          case 71:
+            div = document.querySelector(`div[data-key="${e.keyCode}`);
+            sound = document.querySelector(`audio[data-key="${e.keyCode}`);
+            if (sound.paused) {
+              sound.play();
+              div.classList.add('playing');
+
+              await delay(100);
+              div.classList.remove('playing');
+              times[e.keyCode] += 10;
+              console.log(times);
+              if (times[e.keyCode] == 100) {
+                times[e.keyCode] = 0;
+              }
+              document.querySelector(
+                `div[data-key="${e.keyCode}`
+              ).style.margin = `${times[e.keyCode]}px 0 0 0 `;
+            } else {
+              sound.pause();
+              sound.currentTime = 0;
+              sound.play();
+              div.classList.add('playing');
+              await delay(100);
+              div.classList.remove('playing');
+              times[e.keyCode] += 10;
+              console.log(times);
+              if (times[e.keyCode] == 100) {
+                times[e.keyCode] = 0;
+              }
+              document.querySelector(
+                `div[data-key="${e.keyCode}`
+              ).style.margin = `${times[e.keyCode]}px 0 0 0 `;
+              break;
+            }
+          case 72:
+            div = document.querySelector(`div[data-key="${e.keyCode}`);
+            sound = document.querySelector(`audio[data-key="${e.keyCode}`);
+            if (sound.paused) {
+              sound.play();
+              div.classList.add('playing');
+
+              await delay(100);
+              div.classList.remove('playing');
+              times[e.keyCode] += 10;
+              console.log(times);
+              if (times[e.keyCode] == 100) {
+                times[e.keyCode] = 0;
+              }
+              document.querySelector(
+                `div[data-key="${e.keyCode}`
+              ).style.margin = `${times[e.keyCode]}px 0 0 0 `;
+            } else {
+              sound.pause();
+              sound.currentTime = 0;
+              sound.play();
+              div.classList.add('playing');
+              await delay(100);
+              div.classList.remove('playing');
+              times[e.keyCode] += 10;
+              console.log(times);
+              if (times[e.keyCode] == 100) {
+                times[e.keyCode] = 0;
+              }
+              document.querySelector(
+                `div[data-key="${e.keyCode}`
+              ).style.margin = `${times[e.keyCode]}px 0 0 0 `;
+              break;
+            }
+          case 74:
+            div = document.querySelector(`div[data-key="${e.keyCode}`);
+            sound = document.querySelector(`audio[data-key="${e.keyCode}`);
+            if (sound.paused) {
+              sound.play();
+              div.classList.add('playing');
+
+              await delay(100);
+              div.classList.remove('playing');
+              times[e.keyCode] += 10;
+              console.log(times);
+              if (times[e.keyCode] == 100) {
+                times[e.keyCode] = 0;
+              }
+              document.querySelector(
+                `div[data-key="${e.keyCode}`
+              ).style.margin = `${times[e.keyCode]}px 0 0 0 `;
+            } else {
+              sound.pause();
+              sound.currentTime = 0;
+              sound.play();
+              div.classList.add('playing');
+              await delay(100);
+              div.classList.remove('playing');
+              times[e.keyCode] += 10;
+              console.log(times);
+              if (times[e.keyCode] == 100) {
+                times[e.keyCode] = 0;
+              }
+              document.querySelector(
+                `div[data-key="${e.keyCode}`
+              ).style.margin = `${times[e.keyCode]}px 0 0 0 `;
+              break;
+            }
+          case 75:
+            div = document.querySelector(`div[data-key="${e.keyCode}`);
+            sound = document.querySelector(`audio[data-key="${e.keyCode}`);
+            if (sound.paused) {
+              sound.play();
+              div.classList.add('playing');
+
+              await delay(100);
+              div.classList.remove('playing');
+              times[e.keyCode] += 10;
+              console.log(times);
+              if (times[e.keyCode] == 100) {
+                times[e.keyCode] = 0;
+              }
+              document.querySelector(
+                `div[data-key="${e.keyCode}`
+              ).style.margin = `${times[e.keyCode]}px 0 0 0 `;
+            } else {
+              sound.pause();
+              sound.currentTime = 0;
+              sound.play();
+              div.classList.add('playing');
+              await delay(100);
+              div.classList.remove('playing');
+              times[e.keyCode] += 10;
+              console.log(times);
+              if (times[e.keyCode] == 100) {
+                times[e.keyCode] = 0;
+              }
+              document.querySelector(
+                `div[data-key="${e.keyCode}`
+              ).style.margin = `${times[e.keyCode]}px 0 0 0 `;
+              break;
+            }
+          case 76:
+            div = document.querySelector(`div[data-key="${e.keyCode}`);
+            sound = document.querySelector(`audio[data-key="${e.keyCode}`);
+            if (sound.paused) {
+              sound.play();
+              div.classList.add('playing');
+
+              await delay(100);
+              div.classList.remove('playing');
+              times[e.keyCode] += 10;
+              console.log(times);
+              if (times[e.keyCode] == 100) {
+                times[e.keyCode] = 0;
+              }
+              document.querySelector(
+                `div[data-key="${e.keyCode}`
+              ).style.margin = `${times[e.keyCode]}px 0 0 0 `;
+            } else {
+              sound.pause();
+              sound.currentTime = 0;
+              sound.play();
+              div.classList.add('playing');
+              await delay(100);
+              div.classList.remove('playing');
+              times[e.keyCode] += 10;
+              console.log(times);
+              if (times[e.keyCode] == 100) {
+                times[e.keyCode] = 0;
+              }
+              document.querySelector(
+                `div[data-key="${e.keyCode}`
+              ).style.margin = `${times[e.keyCode]}px 0 0 0 `;
+              break;
+            }
+          default:
+            break;
+        }
+      });
+    </script>
+  </body>
+</html>
