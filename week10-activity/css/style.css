@@ -1,0 +1,11 @@
+h1 {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+li:nth-child(odd) {
+  background-color: #ccc;
+}
